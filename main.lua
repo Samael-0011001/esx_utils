@@ -21,7 +21,7 @@ end)
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(5)
-        local myCoords = GetEntityCoords(GetPlayerPed(-1))
+        local myCoords = GetEntityCoords(PlayerPedId(-1))
         ClearAreaOfCops(myCoords.x, myCoords.y, myCoords.z, 1000.0, 0) --Enleve toute les voiture de pnj police
 
         DisablePlayerVehicleRewards(PlayerId()) --Enleve les armes de toute les vehicule de police
@@ -62,7 +62,7 @@ Citizen.CreateThread(function()
 
     while true do
     
-        SetPedSuffersCriticalHits(GetPlayerPed(-1), false)
+        SetPedSuffersCriticalHits(PlayerPedId(-1), false)
     
         Wait(1)
     
